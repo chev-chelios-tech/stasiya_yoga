@@ -447,19 +447,20 @@
 
     .approach-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: stretch;
-      min-height: 100vh;
+      grid-template-columns: 5fr 7fr;
+      align-items: center;
     }
+
+    .approach-photo { overflow: hidden; }
 
     .approach-photo img {
       width: 100%;
-      height: 100%;
+      height: 480px;
       object-fit: cover;
     }
 
     .approach-body {
-      padding: var(--sp-6) var(--sp-6) var(--sp-6) var(--sp-8);
+      padding: var(--sp-6) var(--sp-8);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -998,8 +999,8 @@
       .hero-buttons { flex-wrap: wrap; }
       .hero-stats { gap: var(--sp-4); }
       .pains-grid { grid-template-columns: repeat(3, 1fr); }
-      .approach-grid { grid-template-columns: 1fr; min-height: auto; }
-      .approach-photo img { max-height: 50vh; }
+      .approach-grid { grid-template-columns: 1fr; }
+      .approach-photo img { height: 360px; }
       .approach-body { padding: var(--sp-6) var(--sp-4); }
       .format-hero { grid-template-columns: 1fr; }
       .format-hero-photo { max-height: 320px; }
