@@ -443,24 +443,31 @@
     }
 
     /* ===== APPROACH ===== */
-    .approach { background: var(--brown); color: var(--text-inverse); padding: 0; }
+    .approach { background: var(--brown); color: var(--text-inverse); padding: var(--sp-8) 0; }
+
+    .approach .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--sp-3);
+    }
 
     .approach-grid {
       display: grid;
-      grid-template-columns: 5fr 7fr;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-8);
       align-items: center;
     }
 
-    .approach-photo { overflow: hidden; }
+    .approach-photo { overflow: hidden; border-radius: var(--radius-md); }
 
     .approach-photo img {
       width: 100%;
-      height: 480px;
+      aspect-ratio: 4/5;
       object-fit: cover;
+      display: block;
     }
 
     .approach-body {
-      padding: var(--sp-6) var(--sp-8);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -999,8 +1006,8 @@
       .hero-buttons { flex-wrap: wrap; }
       .hero-stats { gap: var(--sp-4); }
       .pains-grid { grid-template-columns: repeat(3, 1fr); }
-      .approach-grid { grid-template-columns: 1fr; }
-      .approach-photo img { height: 360px; }
+      .approach-grid { grid-template-columns: 1fr; gap: var(--sp-4); }
+      .approach-photo img { aspect-ratio: 16/9; }
       .approach-body { padding: var(--sp-6) var(--sp-4); }
       .format-hero { grid-template-columns: 1fr; }
       .format-hero-photo { max-height: 320px; }
@@ -1130,17 +1137,19 @@
 
   <!-- APPROACH -->
   <section class="approach" id="practices">
-    <div class="approach-grid">
-      <div class="approach-photo reveal">
-        <img src="Teacher_3.jpg" alt="Практика йоги" width="960" height="1080">
-      </div>
-      <div class="approach-body">
-        <div class="section-tag reveal" style="color:var(--green-light)">Подход</div>
-        <h2 class="section-title reveal">Практика по вашим запросам</h2>
-        <div class="approach-row reveal"><h4>Для сидячей работы</h4><p>Учитывают часы за экраном, акцент на плечевом поясе</p></div>
-        <div class="approach-row reveal reveal-delay-1"><h4>Понятно и просто</h4><p>Рассказываю и показываю, делая с вами</p></div>
-        <div class="approach-row reveal reveal-delay-2"><h4>Любой уровень</h4><p>Даже если никогда не занимались, идём от простого к сложному</p></div>
-        <div class="approach-row reveal reveal-delay-3"><h4>Тело + нервная система</h4><p>Работаем с телом, разгружаем голову</p></div>
+    <div class="container">
+      <div class="approach-grid">
+        <div class="approach-photo reveal">
+          <img src="Teacher_3.jpg" alt="Практика йоги" width="560" height="700">
+        </div>
+        <div class="approach-body">
+          <div class="section-tag reveal" style="color:var(--green-light)">Подход</div>
+          <h2 class="section-title reveal">Практика по вашим запросам</h2>
+          <div class="approach-row reveal"><h4>Для сидячей работы</h4><p>Учитывают часы за экраном, акцент на плечевом поясе</p></div>
+          <div class="approach-row reveal reveal-delay-1"><h4>Понятно и просто</h4><p>Рассказываю и показываю, делая с вами</p></div>
+          <div class="approach-row reveal reveal-delay-2"><h4>Любой уровень</h4><p>Даже если никогда не занимались, идём от простого к сложному</p></div>
+          <div class="approach-row reveal reveal-delay-3"><h4>Тело + нервная система</h4><p>Работаем с телом, разгружаем голову</p></div>
+        </div>
       </div>
     </div>
   </section>
