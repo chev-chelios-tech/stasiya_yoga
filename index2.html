@@ -443,12 +443,21 @@
     }
 
     /* ===== APPROACH ===== */
-    .approach { background: var(--brown); color: var(--text-inverse); padding: var(--sp-8) 0; }
+    .approach {
+      background: var(--brown);
+      color: var(--text-inverse);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0;
+      overflow: hidden;
+    }
 
     .approach .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 var(--sp-3);
+      width: 100%;
     }
 
     .approach-grid {
@@ -456,13 +465,14 @@
       grid-template-columns: 1fr 1fr;
       gap: var(--sp-8);
       align-items: center;
+      max-height: calc(100vh - 6rem);
     }
 
     .approach-photo { overflow: hidden; border-radius: var(--radius-md); }
 
     .approach-photo img {
       width: 100%;
-      aspect-ratio: 4/5;
+      max-height: calc(100vh - 8rem);
       object-fit: cover;
       display: block;
     }
