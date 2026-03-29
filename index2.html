@@ -661,7 +661,8 @@
       z-index: -1;
     }
 
-    .about-body .section-title { margin-bottom: var(--sp-4); }
+    .about { padding: var(--sp-8) 0; }
+    .about-body .section-title { margin-bottom: var(--sp-3); }
 
     .about-text p {
       font-size: var(--fs-base);
@@ -678,7 +679,7 @@
       color: var(--text);
       font-weight: 500;
       margin-top: var(--sp-2);
-      margin-bottom: var(--sp-6);
+      margin-bottom: var(--sp-3);
       letter-spacing: -0.01em;
     }
 
@@ -688,29 +689,30 @@
       text-transform: uppercase;
       color: var(--text-secondary);
       font-weight: 500;
-      margin-bottom: var(--sp-3);
+      margin-bottom: var(--sp-2);
+    }
+
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-3);
     }
 
     .edu-item {
-      display: flex;
-      gap: var(--sp-2);
-      padding: var(--sp-3) 0;
-      border-top: 1px solid var(--border);
-      align-items: flex-start;
+      padding: var(--sp-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
     }
 
-    .edu-item:last-child { border-bottom: 1px solid var(--border); }
-
     .edu-icon {
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
-      margin-top: 3px;
+      width: 18px;
+      height: 18px;
+      margin-bottom: var(--sp-1);
     }
 
     .edu-icon svg {
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       stroke: var(--green);
       fill: none;
       stroke-width: 1.5;
@@ -718,8 +720,8 @@
       stroke-linejoin: round;
     }
 
-    .edu-item h4 { font-size: var(--fs-md); margin-bottom: 2px; }
-    .edu-item p { font-size: var(--fs-sm); color: var(--text-secondary); font-weight: 300; line-height: 1.5; }
+    .edu-item h4 { font-size: var(--fs-sm); margin-bottom: 2px; }
+    .edu-item p { font-size: var(--fs-xs); color: var(--text-secondary); font-weight: 300; line-height: 1.4; }
 
     /* ===== REVIEWS ===== */
     .reviews { background: var(--cream); }
@@ -1231,17 +1233,19 @@
           </div>
           <p class="about-quote reveal">Моя йога — не про стойку на голове, а про то, чтобы спина не болела и голова была ясной.</p>
           <div class="edu-label reveal">Образование</div>
-          <div class="edu-item reveal">
-            <div class="edu-icon"><svg viewBox="0 0 20 20"><path d="M10 2L1 7l9 5 7-3.8V14h2V7L10 2z"/><path d="M4 10.5v3.5l6 3.5 6-3.5V10.5L10 14l-6-3.5z"/></svg></div>
-            <div><h4>Хатха-йога</h4><p>Generation Yoga School, 100+ часов. Учитель: Вишну Шаран Шукла</p></div>
-          </div>
-          <div class="edu-item reveal reveal-delay-1">
-            <div class="edu-icon"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/><path d="M10 5v5l3 2"/></svg></div>
-            <div><h4>Тайский йога-массаж</h4><p>Обучение в Ришикеше (Индия) — мировой столице йоги</p></div>
-          </div>
-          <div class="edu-item reveal reveal-delay-2">
-            <div class="edu-icon"><svg viewBox="0 0 20 20"><path d="M10 1l2.5 5.5H18l-4.5 3.5 1.7 5.5L10 12.5 4.8 15.5l1.7-5.5L2 6.5h5.5z"/></svg></div>
-            <div><h4>Access Bars</h4><p>Международная сертификация. Техника работы со стрессом.</p></div>
+          <div class="edu-grid reveal">
+            <div class="edu-item">
+              <div class="edu-icon"><svg viewBox="0 0 20 20"><path d="M10 2L1 7l9 5 7-3.8V14h2V7L10 2z"/><path d="M4 10.5v3.5l6 3.5 6-3.5V10.5L10 14l-6-3.5z"/></svg></div>
+              <h4>Хатха-йога</h4><p>Generation Yoga School, 100+ часов</p>
+            </div>
+            <div class="edu-item">
+              <div class="edu-icon"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/><path d="M10 5v5l3 2"/></svg></div>
+              <h4>Тайский йога-массаж</h4><p>Обучение в Ришикеше, Индия</p>
+            </div>
+            <div class="edu-item">
+              <div class="edu-icon"><svg viewBox="0 0 20 20"><path d="M10 1l2.5 5.5H18l-4.5 3.5 1.7 5.5L10 12.5 4.8 15.5l1.7-5.5L2 6.5h5.5z"/></svg></div>
+              <h4>Access Bars</h4><p>Сертификация. Работа со стрессом</p>
+            </div>
           </div>
         </div>
       </div>
