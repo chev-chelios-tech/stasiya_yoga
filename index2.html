@@ -733,12 +733,11 @@
     }
 
     .review-card {
-      min-width: calc(50% - var(--sp-3) / 2);
+      flex: 0 0 calc(50% - var(--sp-3) / 2);
       padding: var(--sp-6);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
       background: var(--ivory);
-      flex-shrink: 0;
     }
 
     .review-stars {
@@ -1042,7 +1041,7 @@
       .formats-grid { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; }
       .about-photo { max-width: 380px; }
-      .review-card { min-width: 100%; }
+      .review-card { flex: 0 0 100%; }
       .tg-grid { grid-template-columns: repeat(2, 1fr); }
       .contacts-body { padding: var(--sp-4); }
       .footer-bottom { flex-direction: column; gap: var(--sp-2); text-align: center; }
