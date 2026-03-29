@@ -934,11 +934,13 @@
       background: var(--brown-warm);
     }
 
+    .contacts { padding: var(--sp-8) 0; }
+
     .contacts-body {
-      padding: var(--sp-8);
+      padding: var(--sp-6);
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      justify-content: center;
       color: var(--text-inverse);
     }
 
@@ -976,6 +978,7 @@
     .contacts-photo img {
       width: 100%;
       height: 100%;
+      max-height: 400px;
       object-fit: cover;
     }
 
@@ -1013,8 +1016,8 @@
       .hero-stats { gap: var(--sp-4); }
       .pains-grid { grid-template-columns: repeat(3, 1fr); }
       .approach-grid { grid-template-columns: 1fr; gap: var(--sp-4); }
-      .approach-photo img { aspect-ratio: 16/9; }
-      .approach-body { padding: var(--sp-6) var(--sp-4); }
+      .approach-photo img { height: auto; aspect-ratio: 16/9; }
+      .approach-body { padding: 0 var(--sp-4); }
       .format-hero { grid-template-columns: 1fr; }
       .format-hero-photo { max-height: 320px; }
       .about-grid { grid-template-columns: 1fr 1fr; gap: var(--sp-4); }
@@ -1043,6 +1046,7 @@
       .formats-grid { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; }
       .about-photo { max-width: 380px; }
+      .edu-grid { grid-template-columns: 1fr; }
       .review-card { flex: 0 0 100%; }
       .tg-grid { grid-template-columns: repeat(2, 1fr); }
       .contacts-body { padding: var(--sp-4); }
