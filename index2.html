@@ -520,14 +520,16 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 75%;
+      object-position: center 50%;
     }
 
     .format-hero-bg::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, rgba(30,25,20,0.82) 0%, rgba(30,25,20,0.55) 55%, transparent 100%);
+      background:
+        linear-gradient(to right, rgba(30,25,20,0.88) 0%, rgba(30,25,20,0.6) 50%, rgba(30,25,20,0.15) 100%),
+        linear-gradient(to bottom, rgba(30,25,20,0.3) 0%, transparent 30%, transparent 70%, rgba(30,25,20,0.3) 100%);
     }
 
     .format-hero-body {
