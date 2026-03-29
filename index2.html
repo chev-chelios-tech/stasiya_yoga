@@ -504,16 +504,37 @@
     .formats { background: var(--cream); }
 
     .format-hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      position: relative;
       border-radius: var(--radius-lg);
       overflow: hidden;
-      background: var(--brown-warm);
       margin-bottom: var(--sp-4);
     }
 
+    .format-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .format-hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+
+    .format-hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(30,25,20,0.82) 0%, rgba(30,25,20,0.55) 55%, transparent 100%);
+    }
+
     .format-hero-body {
+      position: relative;
+      z-index: 1;
       padding: var(--sp-8);
+      max-width: 560px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -580,11 +601,6 @@
       font-weight: 300;
     }
 
-    .format-hero-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
 
     .formats-grid {
       display: grid;
@@ -1018,8 +1034,8 @@
       .approach-grid { grid-template-columns: 1fr; gap: var(--sp-4); }
       .approach-photo img { height: auto; aspect-ratio: 16/9; }
       .approach-body { padding: 0 var(--sp-4); }
-      .format-hero { grid-template-columns: 1fr; }
-      .format-hero-photo { max-height: 320px; }
+      .format-hero-body { padding: var(--sp-6); }
+      .format-hero-bg::after { background: linear-gradient(to bottom, rgba(30,25,20,0.8) 0%, rgba(30,25,20,0.5) 100%); }
       .about-grid { grid-template-columns: 1fr 1fr; gap: var(--sp-4); }
       .contacts-wrap { grid-template-columns: 1fr; }
       .contacts-photo { max-height: 320px; }
@@ -1173,6 +1189,9 @@
         <p class="section-sub">Начните с бесплатного занятия</p>
       </div>
       <div class="format-hero reveal">
+        <div class="format-hero-bg">
+          <img src="Group_teacher.jpg" alt="Групповое занятие" width="720" height="1280">
+        </div>
         <div class="format-hero-body">
           <div class="format-badge">Лучший старт</div>
           <h3>Онлайн-группа</h3>
@@ -1186,9 +1205,6 @@
           <div class="price-big"><strong>4 444 &#8381;</strong><span>/ месяц</span></div>
           <a href="https://t.me/stasyia_yoga" target="_blank" rel="noopener" class="btn btn-primary">Попробовать бесплатно</a>
           <p class="format-note">Первое занятие — в подарок.</p>
-        </div>
-        <div class="format-hero-photo">
-          <img src="Lesson_3.jpg" alt="Групповое занятие" width="560" height="480">
         </div>
       </div>
       <div class="formats-grid">
