@@ -1282,7 +1282,7 @@
         </div>
       </div>
       <div class="reviews-nav">
-        <div class="dots"><button class="dot on" data-i="0"></button><button class="dot" data-i="1"></button><button class="dot" data-i="2"></button></div>
+        <div class="dots"></div>
         <div class="arrows">
           <button class="arrow-btn" id="rPrev" aria-label="Назад"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
           <button class="arrow-btn" id="rNext" aria-label="Вперёд"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
@@ -1421,18 +1421,46 @@
 
     // Reviews slider
     var track = document.getElementById('rTrack');
-    var dots = document.querySelectorAll('.dot');
-    var cur = 0, total = 3;
+    var dotsWrap = document.querySelector('.dots');
+    var cur = 0;
+
+    function getPerView() { return window.innerWidth > 768 ? 2 : 1; }
+
+    function getTotal() {
+      var cards = track.children.length;
+      var pv = getPerView();
+      return Math.max(1, cards - pv + 1);
+    }
+
+    function buildDots() {
+      var total = getTotal();
+      dotsWrap.innerHTML = '';
+      for (var i = 0; i < total; i++) {
+        var btn = document.createElement('button');
+        btn.className = 'dot' + (i === cur ? ' on' : '');
+        btn.dataset.i = i;
+        btn.addEventListener('click', function() { slide(+this.dataset.i); });
+        dotsWrap.appendChild(btn);
+      }
+    }
+
     function slide(i) {
-      cur = i;
+      var total = getTotal();
+      cur = Math.max(0, Math.min(i, total - 1));
       var card = track.children[0];
       var w = card.offsetWidth + parseFloat(getComputedStyle(track).gap);
       track.style.transform = 'translateX(-' + cur * w + 'px)';
-      dots.forEach(function(d, idx) { d.classList.toggle('on', idx === cur); });
+      dotsWrap.querySelectorAll('.dot').forEach(function(d, idx) { d.classList.toggle('on', idx === cur); });
     }
-    document.getElementById('rNext').addEventListener('click', function() { slide((cur + 1) % total); });
-    document.getElementById('rPrev').addEventListener('click', function() { slide((cur - 1 + total) % total); });
-    dots.forEach(function(d) { d.addEventListener('click', function() { slide(+d.dataset.i); }); });
+
+    document.getElementById('rNext').addEventListener('click', function() { slide((cur + 1) % getTotal()); });
+    document.getElementById('rPrev').addEventListener('click', function() { slide((cur - 1 + getTotal()) % getTotal()); });
+
+    buildDots();
+    window.addEventListener('resize', function() {
+      buildDots();
+      slide(Math.min(cur, getTotal() - 1));
+    });
 
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(function(a) {
