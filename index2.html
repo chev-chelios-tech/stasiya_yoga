@@ -942,23 +942,43 @@
     .tg-cta { text-align: center; }
 
     /* ===== CONTACTS ===== */
-    .contacts { background: var(--cream); }
+    .contacts { background: var(--cream); padding: var(--sp-8) 0; }
 
     .contacts-wrap {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      position: relative;
       border-radius: var(--radius-lg);
       overflow: hidden;
-      background: var(--brown-warm);
+      min-height: 360px;
     }
 
-    .contacts { padding: var(--sp-8) 0; }
+    .contacts-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .contacts-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+
+    .contacts-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(30,25,20,0.85) 0%, rgba(30,25,20,0.45) 50%, rgba(30,25,20,0.15) 100%);
+    }
 
     .contacts-body {
+      position: relative;
+      z-index: 1;
       padding: var(--sp-6);
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-end;
+      min-height: 360px;
       color: var(--text-inverse);
     }
 
@@ -967,14 +987,12 @@
       align-items: center;
       gap: var(--sp-2);
       padding: var(--sp-2) 0;
-      border-top: 1px solid rgba(255,255,255,0.08);
       text-decoration: none;
       color: var(--cream);
       font-size: var(--fs-base);
       transition: color var(--duration-fast);
     }
 
-    .c-link:last-of-type { border-bottom: 1px solid rgba(255,255,255,0.08); }
     .c-link:hover { color: #fff; }
 
     .c-link svg {
@@ -989,15 +1007,8 @@
     .c-location {
       margin-top: var(--sp-3);
       font-size: var(--fs-sm);
-      color: rgba(245,240,234,0.35);
+      color: rgba(245,240,234,0.5);
       font-weight: 300;
-    }
-
-    .contacts-photo img {
-      width: 100%;
-      height: 100%;
-      max-height: 400px;
-      object-fit: cover;
     }
 
     /* ===== FOOTER ===== */
@@ -1039,8 +1050,8 @@
       .format-hero-body { padding: var(--sp-6); }
       .format-hero-bg::after { background: linear-gradient(to bottom, rgba(30,25,20,0.8) 0%, rgba(30,25,20,0.5) 100%); }
       .about-grid { grid-template-columns: 1fr 1fr; gap: var(--sp-4); }
-      .contacts-wrap { grid-template-columns: 1fr; }
-      .contacts-photo { max-height: 320px; }
+      .contacts-wrap { min-height: 300px; }
+      .contacts-body { min-height: 300px; }
     }
 
     @media (max-width: 768px) {
@@ -1374,15 +1385,15 @@
   <section class="section contacts" id="contacts">
     <div class="container">
       <div class="contacts-wrap reveal">
+        <div class="contacts-bg">
+          <img src="Lesson.jpg" alt="Yoga lesson" width="1200" height="800">
+        </div>
         <div class="contacts-body">
           <a href="https://t.me/stasyia_yoga" target="_blank" rel="noopener" class="c-link">
             <svg viewBox="0 0 24 24"><path d="M21 3L9 13m12-10l-4 18-5-8.5L3 10l18-7z"/></svg>Telegram: @stasyia_yoga</a>
           <a href="https://instagram.com/stasyia.yoga" target="_blank" rel="noopener" class="c-link">
             <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>Instagram: @stasyia.yoga</a>
           <p class="c-location">Санкт-Петербург (офлайн) + онлайн по всему миру</p>
-        </div>
-        <div class="contacts-photo">
-          <img src="Teacher_4.jpg" alt="Yoga" width="560" height="400">
         </div>
       </div>
     </div>
