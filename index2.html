@@ -988,7 +988,7 @@
       display: flex;
       align-items: center;
       gap: var(--sp-2);
-      padding: var(--sp-2) 0;
+      padding: 4px 0;
       text-decoration: none;
       color: var(--cream);
       font-size: var(--fs-base);
@@ -1007,10 +1007,22 @@
     }
 
     .c-location {
-      margin-top: var(--sp-3);
+      margin-top: 4px;
       font-size: var(--fs-sm);
       color: rgba(245,240,234,0.5);
       font-weight: 300;
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+    }
+
+    .c-location svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--green-light);
+      fill: none;
+      stroke-width: 1.5;
+      flex-shrink: 0;
     }
 
     /* ===== FOOTER ===== */
@@ -1395,7 +1407,7 @@
             <svg viewBox="0 0 24 24"><path d="M21 3L9 13m12-10l-4 18-5-8.5L3 10l18-7z"/></svg>Telegram: @stasyia_yoga</a>
           <a href="https://instagram.com/stasyia.yoga" target="_blank" rel="noopener" class="c-link">
             <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>Instagram: @stasyia.yoga</a>
-          <p class="c-location">Санкт-Петербург (офлайн) + онлайн по всему миру</p>
+          <p class="c-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Санкт-Петербург (офлайн) + онлайн по всему миру</p>
         </div>
       </div>
     </div>
